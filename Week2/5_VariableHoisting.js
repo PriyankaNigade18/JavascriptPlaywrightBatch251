@@ -90,7 +90,7 @@ let test2=function()
             //call
             test3();
 
-            console.log(stdName);
+            console.log(stdName);//ReferenceError: Cannot access 'stdName' before initialization
             let stdName;
             console.log(stdName);
             
