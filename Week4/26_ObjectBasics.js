@@ -10,7 +10,7 @@ Ways Of Creating Object
 
 ------function-----
 3.Using constructor function
-5.Prototype based object
+4.Prototype based object
 */
 
 console.log("----------Object Literals----------------");
