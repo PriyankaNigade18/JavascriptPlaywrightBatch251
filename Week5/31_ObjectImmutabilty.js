@@ -23,15 +23,15 @@ console.log(product);
 Object.freeze(product);
 
 //modify the existing property
-product.name='laptop';
+//product.name='laptop';//TypeError: Cannot assign to read only property 'name' of object '#<Object>'/
 console.log(product);
 
 //add new property
-product.version=17;
+//product.version=17;//TypeError: Cannot add property version, object is not extensible
 console.log(product);
 
 //delete
-delete product.name;
+//delete product.name;//TypeError: Cannot delete property 'name' of #<Object>
 console.log(product);
 
 
@@ -47,11 +47,11 @@ Object.seal(browser);
 console.log(browser);
 
 //adding new property
-browser.incognito=true;
+//browser.incognito=true;//TypeError: Cannot add property incognito, object is not extensible
 console.log(browser);
 
 //delete existing properties
-delete browser.version;
+//delete browser.version;//TypeError: Cannot delete property 'version' of #<Object>
 console.log(browser);
 
 //modify existing properties

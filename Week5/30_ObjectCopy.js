@@ -21,6 +21,7 @@ let u1={
 
 //this time 2 objects will be created inside memory
 let u2={...u1};
+
 console.log(u1);
 console.log(u2);
 u2.name="Poonam";
