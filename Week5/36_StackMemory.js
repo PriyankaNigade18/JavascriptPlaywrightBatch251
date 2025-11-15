@@ -34,7 +34,7 @@ Playwright we avoid recursion
 function login()
 {
     console.log("do login....");
-    login();
+    login();//RangeError: Maximum call stack size exceeded
     
 }
 
