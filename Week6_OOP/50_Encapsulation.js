@@ -15,6 +15,10 @@ How to achive in Javascript
 ------------------------------
 We can declare data as private data and modify data with getter and setters methods
 
+how to declare private variables in js
+----------------------------------
+#variable name
+
 getter(): get the data 
 setter(): set the data
 

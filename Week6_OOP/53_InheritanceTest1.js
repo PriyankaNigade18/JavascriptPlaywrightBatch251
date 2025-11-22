@@ -10,6 +10,11 @@ class BMW extends Car
         
     }
 
+    price()
+    {
+        console.log("BMW......50L");
+        
+    }
 }
 
 
@@ -20,6 +25,7 @@ c1.start();//individual method
 c1.refule();//individual method
 c1.stop();//individual method
 c1.breakFeature();
+c1.price();
 //c1.autoEngine();//Error:using parent we cannot access parent properties
 
 console.log("-------------");
@@ -31,6 +37,7 @@ b1.autoEngine();//individual method
 b1.refule();//inherited method
 b1.stop();//inherited method
 b1.breakFeature();
+b1.price();
 
 
 console.log("--------------");
@@ -40,6 +47,11 @@ class Audi extends Car
     autoGear()
     {
         console.log("Audi......autoGear()");
+        
+    }
+    price()
+    {
+        console.log("Audi.....70L");
         
     }
 }
@@ -59,6 +71,7 @@ a1.refule();
 a1.autoGear();
 a1.stop();
 a1.breakFeature();
+a1.price();
 
 
 

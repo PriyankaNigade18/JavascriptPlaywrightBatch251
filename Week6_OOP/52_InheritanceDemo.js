@@ -47,6 +47,12 @@ stop()
     
 }
 
+price()
+{
+    console.log("Car...1L");
+    
+}
+
 
 }
 
