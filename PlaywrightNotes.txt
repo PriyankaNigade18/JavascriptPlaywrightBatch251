@@ -1,0 +1,61 @@
+
+Playwright:
+--------------
+Playwright it is an API for end to end to modern web application testing
+
+
+By default Playwright executes all test cases in parallel and 
+executes on (chromium,firefox,webkit).
+
+By default playwright executes all test in headless mode
+Headless:
+-------------
+Without any UI
+
+To Run Playwright testCase
+------------------------------
+1.To run all test from tests folder
+npx playwright test
+
+2.To run specifi test case
+npx playwright test tests/testcasename
+
+3.To run test case in headed mode
+npx playwright test tests/testcasename --headed
+
+4.To run test case on any single browser
+npx playwright test tests/testcasename --headed --project=chromium
+------------------------------------------------
+Playwright Commands
+======================
+
+//To open any aaplication
+await page.goto("url");
+
+//To get application current title
+page.title();
+
+//To get application current url
+page.url();
+
+
+Playwright tags
+-------------------
+1.only
+2.skip
+
+If you wanted to start session on real browser Microsoft edge,chrome browser
+-------------------------------------------------
+chromium.launch({headeless:false,channel:"msedge"})
+
+chromium.launch({headeless:false,channel:"chrome"})
+
+what is channel?
+--------------------
+Browser distribution channel.
+
+Use "chromium" to opt in to new headless mode.
+
+Use "chrome", "chrome-beta", "chrome-dev", "chrome-canary",
+ "msedge", "msedge-beta", "msedge-dev", or "msedge-canary" 
+to use branded Google Chrome and Microsoft Edge.
