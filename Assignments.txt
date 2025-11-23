@@ -1,0 +1,4 @@
+Assignment1: 
+Create a Playwright test that launches a Chrome browser session,
+ opens two separate tabs for two different applications, 
+retrieves the URL and title from each tab, and prints them.
