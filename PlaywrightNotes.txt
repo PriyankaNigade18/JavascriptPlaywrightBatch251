@@ -59,3 +59,75 @@ Use "chromium" to opt in to new headless mode.
 Use "chrome", "chrome-beta", "chrome-dev", "chrome-canary",
  "msedge", "msedge-beta", "msedge-dev", or "msedge-canary" 
 to use branded Google Chrome and Microsoft Edge.
+
+============================================
+Date: 29th Nov 2025
+How to automate mobile web application with mobile emulator/simulator in playwright
+playwright.config.js
+
+Playwright support mobile web application test not native app test.
+
+---------------------------------------------
+Assertion In Playwright
+--------------------------
+Assertion will help to validate current status of application
+Types
+=======
+1.Hard Assertion
+If assertion fail hard assertion immediate stop execution on failure line
+
+2.Soft Assertion
+If assertion fail soft assertion continue execution after failure line and throws error
+
+we are using playwright with  Javascript language it support chai assertion library
+here use expect() for assertion
+
+//with respect to page
+await expect(page).toHaveURL("https://www.google.com/")//exact match
+//partial match /partial text/
+await expect(page).toHaveURL(/google/);
+
+---------------------------------------
+Navigations in Playwright
+-----------------------------
+gotBack() :navigate to back
+goForward() :navigate to forward
+reload():refresh page
+=================================================
+How to automate WebElement?
+-------------------------------
+1.Identify WebElement
+2.Perform actions on WebElement
+
+
+How to Identify WebElement?
+------------------------------
+To Identify WebElement we use Locators
+
+What is Locator?
+------------------
+Locator is address of WebElement form Webpage
+
+Playwright Locator Support
+-----------------------------
+1.Build In Locator Support
+page.getByRole() to locate by explicit and implicit accessibility attributes.
+page.getByText() to locate by text content.
+page.getByLabel() to locate a form control by associated label's text.
+<label><input type="checkbox" id="remember">Remember me</label>
+
+page.getByPlaceholder() to locate an input by placeholder.
+
+page.getByAltText() to locate an element, usually image, by its text alternative.
+page.getByTitle() to locate an element by its title attribute.
+page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+
+2.By CssSelector
+3.By Xpath
+
+==================================
+WebElement is visible,enabled,disable
+------------------------------
+isVisible()
+isEnabled()
+isDisabled()

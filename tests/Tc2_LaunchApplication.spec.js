@@ -26,6 +26,6 @@ test("Test for Google application",async({page})=>{
     console.log("Application url is: "+appUrl);
 
     //Waits for the given timeout in milliseconds.
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(5000);
     
 })

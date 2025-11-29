@@ -1,4 +1,11 @@
-Assignment1: 
-Create a Playwright test that launches a Chrome browser session,
- opens two separate tabs for two different applications, 
-retrieves the URL and title from each tab, and prints them.
+
+Assignment1:
+-------------------
+create playwright script where open chrome browser and inside that 
+open two tabs for two different application and get the current page 
+title and url
+
+Assignment2: 
+--------------------
+Automate https://tutorialsninja.com/demo/index.php?route=account/register application
+for Register functionality using playwright Inbuilt locators
