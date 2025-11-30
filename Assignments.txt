@@ -9,3 +9,16 @@ Assignment2:
 --------------------
 Automate https://tutorialsninja.com/demo/index.php?route=account/register application
 for Register functionality using playwright Inbuilt locators
+
+Assignment3:
+Automate login functionality for this application https://tutorialsninja.com/demo/index.php?route=account/login
+use cssSelector
+
+Assignment4:
+automate Google serach using cssSelector
+goto google--->search for Java keyword-->10options--->get all 10 options 
+and print in console
+
+Assignment 5:
+write automation script for calculating total links from https://www.naukri.com/
+and print text as well as href value in console

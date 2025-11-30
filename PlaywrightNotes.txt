@@ -62,6 +62,7 @@ to use branded Google Chrome and Microsoft Edge.
 
 ============================================
 Date: 29th Nov 2025
+======================
 How to automate mobile web application with mobile emulator/simulator in playwright
 playwright.config.js
 
@@ -84,8 +85,13 @@ here use expect() for assertion
 
 //with respect to page
 await expect(page).toHaveURL("https://www.google.com/")//exact match
+
 //partial match /partial text/
 await expect(page).toHaveURL(/google/);
+
+
+Note :
+If Assertion fail then Assertion error throw after 5000ms
 
 ---------------------------------------
 Navigations in Playwright
@@ -131,3 +137,119 @@ WebElement is visible,enabled,disable
 isVisible()
 isEnabled()
 isDisabled()
+
+30-11-2025
+=================
+2.Actions on element-
+=========================
+1.inputbox,searchbox,textbox--->write ---->fill("text")
+
+//pressSequentially()
+//NOTE In most cases, you should use locator.fill(value[, options]) instead. You only need to press keys one by one if there is special keyboard handling on the page.
+await page.getByTitle("Search").pressSequentially("automation",{delay:1000});
+//amazon search,flipkart,googlesearch
+
+2.button,link-->click--->click()
+3.checkbox,radiobutton--->click---->click(),check(),uncheck()
+4.dropdown---><select> based --->select
+
+To get text of element in Playwright(selenium getText())
+======================================
+1.textContent()- visible text and hidden text also
+2.innerText()- visible text from page
+
+To get the attribute value
+===============================
+getAttribute('attributename'): returns attribute value
+
+For Dynamic Elements/Complex scenarios
+==========================================
+cssSelector 
+Xpath
+Note:
+=======
+In playwright when we follow cssSelctor or xpath locator then use locator() to identify that element
+page.locator("")
+
+cssSelector
+================
+cssSelector is locator to locate element based on its css property
+cssSelector can travel only in one direction (Parent to child)
+cssSelector is faster than Xpath
+cssSelector doesnt support text
+
+1.tagname with id
+=====================
+Syntax:
+------------
+tagname#id or #id
+a#SignIn
+
+2.tagname with className
+=====================
+Syntax:
+------------
+tagname.className
+
+button.btn
+
+Multiple classnames
+--------------------
+tagname.c1.c2.c3..... cn
+
+3.tagname with attribute
+===========================
+tagname[attribute='value']
+
+input[type='password']
+
+multiple attributes
+-----------------------
+tagname[attribute1='value'][attribute='value'][attribute='value']
+
+input[name='password-name'][type='password']
+
+4.tagname with id ,classname ,attaribute
+============================================
+Syntax:
+==========
+tagname#id.className[attribute='value']
+
+button.btn[type="submit"]#submit-id
+
+
+
+5.cssSelector with contains (partial match)
+=========================================
+Syntax:
+------------
+tagname[attribute*='partial value']
+id="twotabsearchtextbox"
+
+input[id*='searchtext'] ......1 of 1
+
+6.cssSelector with starts-with (Prefix value)
+=======================================
+syntax:
+==========
+tagname[attribute ^='prefix value']
+input[id^='two']......1 of 1
+
+7.cssSelector with ends-with (suffix value)
+===========================================
+syntax:
+==========
+tagname[attribute $='suffix value']
+input[id$='box']
+
+8.parent to child 
+==========================
+     1. parenttag childtag :- direct + indirect child Elements
+     2. parenttag>childtag :- direct child elements
+
+
+9.cssSelector with index
+===============================
+Syntax:
+===============
+parenttag childtag:nth-Child(index)

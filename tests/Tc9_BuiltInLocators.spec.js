@@ -72,7 +72,7 @@ test("Test For BuiltIn Locators ",async({page})=>{
 
 })
 
-test.only("Test for Built in locator getByAltText() and getByTestId()",async({page})=>{
+test("Test for Built in locator getByAltText() and getByTestId()",async({page})=>{
 
     await page.goto("https://www.facebook.com/");
 
@@ -86,3 +86,22 @@ test.only("Test for Built in locator getByAltText() and getByTestId()",async({pa
     await page.waitForTimeout(2000);
  
 })
+
+
+test.only("Test Google search with getByTitle()",async({page})=>{
+
+    //Allows locating elements by their title attribute.
+
+    //open application
+    await page.goto("https://www.google.com/");
+
+    //title="Search"
+    //await page.getByTitle("Search").fill("automation testing");
+
+    //pressSequentially()
+//NOTE In most cases, you should use locator.fill(value[, options]) instead. You only need to press keys one by one if there is special keyboard handling on the page.
+    await page.getByTitle("Search").pressSequentially("automation",{delay:1000});
+
+    await page.waitForTimeout(2000);
+})
+
