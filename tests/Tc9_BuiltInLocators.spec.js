@@ -84,6 +84,7 @@ test("Test for Built in locator getByAltText() and getByTestId()",async({page})=
     await page.getByTestId("royal-email").fill("test123@gmail.com");
 
     await page.waitForTimeout(2000);
+    
  
 })
 

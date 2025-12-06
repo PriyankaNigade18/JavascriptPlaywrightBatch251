@@ -22,3 +22,15 @@ and print in console
 Assignment 5:
 write automation script for calculating total links from https://www.naukri.com/
 and print text as well as href value in console
+
+Assignment6:Multiple Elements
+Navigate to https://www.flipkart.com/ app search for MacBook and get calculate total and 
+get all options in console
+
+Assignment7: Based on Xpath/CssSelector
+Navigate to https://opensource-demo.orangehrmlive.com/web/index.php/auth/login App
+and automate login and logout using xpath and cssSelector
+
+Assignment8: Based on Xpath/CssSelector
+Navigate to https://automationplayground.com/crm/ App
+and automate login and logout using xpath and cssSelector

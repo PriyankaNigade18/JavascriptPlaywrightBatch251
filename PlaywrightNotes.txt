@@ -151,7 +151,7 @@ await page.getByTitle("Search").pressSequentially("automation",{delay:1000});
 
 2.button,link-->click--->click()
 3.checkbox,radiobutton--->click---->click(),check(),uncheck()
-4.dropdown---><select> based --->select
+4.dropdown---><select> based --->selectOptions()
 
 To get text of element in Playwright(selenium getText())
 ======================================
@@ -168,8 +168,9 @@ cssSelector
 Xpath
 Note:
 =======
-In playwright when we follow cssSelctor or xpath locator then use locator() to identify that element
-page.locator("")
+In playwright when we follow cssSelctor or xpath locator
+then use locator() to identify that element
+page.locator("css/xpath")
 
 cssSelector
 ================
@@ -205,7 +206,7 @@ input[type='password']
 
 multiple attributes
 -----------------------
-tagname[attribute1='value'][attribute='value'][attribute='value']
+tagname[attribute1='value'][attribute2='value'][attribute3='value']
 
 input[name='password-name'][type='password']
 
@@ -216,8 +217,6 @@ Syntax:
 tagname#id.className[attribute='value']
 
 button.btn[type="submit"]#submit-id
-
-
 
 5.cssSelector with contains (partial match)
 =========================================
@@ -253,3 +252,128 @@ input[id$='box']
 Syntax:
 ===============
 parenttag childtag:nth-Child(index)
+
+
+6-12-2025
+====================
+Multiple Webelement automation
+-----------------------------
+all():Locator[]
+allInnerText():String[]
+
+
+To enter value and get that entered value method
+=================================================
+To enter value in textbox
+await page.locator("").fill("Hello");
+
+To get this entered value
+--------------------------------
+Returns the value for the matching <input> or <textarea> or <select> element.
+
+await page.locator("").inputValue();
+
+
+Xpath Locator
+============================
+-It is path of element from html/xml document
+-xpath identify elements from DOM(document Object model)
+-xpath have multiple method support
+-xpath can travel forward and backward directions
+-xpath Axies Parent,child,ancestor,siblings,following,preceding
+
+------html DOM-------
+<html>------root node
+<head>
+</head>
+
+<body>
+<input>
+<a>----------------element
+<button>
+</body>
+</html>
+==========================
+Xpath Types
+==================
+1.Absolute xpath(full path)
+===========================
+-It Identify element from root node <html>
+-It starts with '/'
+
+/html/body/div[2]/div/div/div/div[2]/div/form/div[1]/input
+
+2.Relative xpath(partial path)
+==============================
+-It identify element from its realative property
+-It starts wit '//'
+
+//*[@id="input-email"]
+
+* find any tag where id ="input-email"
+
+Syntax:
+============
+//tagname[@attribute='value']
+
+
+xpath with Operator
+====================
+
+xpath with index and position()
+====================================
+
+
+xpath with methods
+========================
+1.text()
+2.normalize-space()
+3.contains()
+4.starts-with()
+
+xpath Axies(Dynamic Elements)
+================================
+1.ancestor
+
+2.parent
+
+3.child
+
+4.following
+
+5.preceding
+
+6.following-siblings
+
+7.preceding-siblings
+
+
+checkbox & Radion button
+------------------------------
+
+
+How to use Javascript command in Playwright
+---------------------------------------------
+-Scroll the page
+-how to refresh page
+-how to enter or perform click on element
+-how to automate disable element using Javascript
+
+
+Dropdown automation
+==========================
+
+<select>
+
+non<select>
+
+WebTable automation
+
+Calender
+
+
+
+
+
+
+
