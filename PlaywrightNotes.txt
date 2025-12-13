@@ -306,7 +306,7 @@ Xpath Types
 2.Relative xpath(partial path)
 ==============================
 -It identify element from its realative property
--It starts wit '//'
+-It starts with '//'
 
 //*[@id="input-email"]
 
@@ -319,38 +319,154 @@ Syntax:
 
 xpath with Operator
 ====================
+At the time of identifying elements based on multiple attribute
+
+and(&&)
+------------
+syntax
+=========
+//tagname[@attribute1='value' and @attribute2='value'and @attribute3='value']
+
+or(||)
+============
+syntax
+=========
+//tagname[@attribute1='value' or @attribute2='value' or @attribute3='value']
+
 
 xpath with index and position()
 ====================================
+For Indexing
+===============
+(xpath)[index number from Dom]
+
+position()
+===================
+(xpath)[position()=index number from Dom]
 
 
 xpath with methods
 ========================
 1.text()
-2.normalize-space()
+============
+If element present with visible text <a>text</a>we can identify it using text()
+text() never ignores white space
+Syntax:
+===========
+//tagname[text()='visible text']
+
+2.normalize-space():trim():safe
+================================
+If element present with visible text <a>text</a>we can identify it using normalize-spce()
+normalize-space() ignores white space and identify element based on text
+
+Syntax:
+===========
+//tagname[normalize-space()='visible text']
+
 3.contains()
+====================
+work for partial match with attribute value or visible text
+
+<input id="abcdefghijkhkjhkjkljk">
+
+synatx:
+============
+//tagname[contains(@attribute,'partial value')]
+
+or
+
+//tagname[contains(text(),'partial text')]
+//tagname[contains(normalize-space(),'partial text')]
+
+//input[contains(@id,'defgh')]
+
 4.starts-with()
+==========================
+this method identify element based on prefix value
+
+Syntax
+===========
+//tagname[starts-with(@attribute,'prefix value')]
+
+or
+//tagname[starts-with(text(),'prefix text')]
+
 
 xpath Axies(Dynamic Elements)
 ================================
 1.ancestor
+================
+Syntax:
+=======
+//tagname[@attribute='value']//ancestor::ancestor tagname
 
 2.parent
+================
+Syntax:
+=======
+//tagname[@attribute='value']//parent::parent tagname
 
 3.child
+==========
+Syntax:
+=======
+//tagname[@attribute='value']//child::child tagname
 
 4.following
+=================
+Syntax:
+=======
+//tagname[@attribute='value']//following::following tagname
 
 5.preceding
+==============
+Syntax:
+=======
+//tagname[@attribute='value']//preceding::preceding tagname
 
 6.following-siblings
+=========================
+Syntax:
+=======
+//tagname[@attribute='value']//following-sibling::following-sibling tagname
 
 7.preceding-siblings
+========================
+Syntax:
+=======
+//tagname[@attribute='value']//preceding-sibling::preceding-sibling tagname
 
+<tbody>-------------------------GrandParent for John-ancestor
+     <tr>--------------------Parent for John
+         <td>4</td>-----------------preceding sibling
+          <td>John</td>---------Element
+          <td>Robinson</td>--------
+          <td>jr5527</td>----------following siblings
+          <td>---------------
+          <a href="user.html"><i class="icon-pencil"></i></a></td>
+        </tr>
+        <tr>----following node
+        <tr>
+</tbody>
+
+=========================================================
+From Multiple Elements to match unique element
+================================
+nth(index) first()  last()
+-------------------------------
+nth(index)
+-----------
+Returns locator to the n-th matching element.
+It's zero based, nth(0) selects the first element.
+
+last()
+-------
+Returns locator to the last matching element.
 
 checkbox & Radion button
 ------------------------------
-
+done
 
 How to use Javascript command in Playwright
 ---------------------------------------------
@@ -359,14 +475,27 @@ How to use Javascript command in Playwright
 -how to enter or perform click on element
 -how to automate disable element using Javascript
 
-
+=======================================================
 Dropdown automation
 ==========================
 
+1.Select tag based dropdown
 <select>
+--------------------------
+select by value
+select by label
+select by index
 
+page.locator().selectOptions("value")
+page.locator().selectOptions({label:"visible text"})
+index starts with 0
+page.locator().selectOptions({index:2})
+------------------------------------------
+
+2.Non select tag based dropdown/autosuggestion/bootstarp dropdown
 non<select>
 
+============================================
 WebTable automation
 
 Calender
