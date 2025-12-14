@@ -34,3 +34,13 @@ and automate login and logout using xpath and cssSelector
 Assignment8: Based on Xpath/CssSelector
 Navigate to https://automationplayground.com/crm/ App
 and automate login and logout using xpath and cssSelector
+
+Assignment 9:
+Automate WebForm 
+https://www.lambdatest.com/selenium-playground/input-form-demo
+
+Assignment 10:
+automate https://www.goibibo.com/ dropdown
+
+Assignment11:
+automate https://www.redbus.in/ dropdown

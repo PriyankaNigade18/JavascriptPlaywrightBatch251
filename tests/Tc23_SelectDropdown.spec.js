@@ -1,5 +1,6 @@
 
 import {test,expect} from "@playwright/test"
+import { selectByValue,selectByIndex,selectByLabel,selectBasedDropdown } from "./Generic/Utility";
 
 test("Test Select tag based dropdown",async({page})=>{
 
@@ -11,7 +12,8 @@ test("Test Select tag based dropdown",async({page})=>{
 
     let selectDD=page.locator("#searchDropdownBox");
     //select by value
-    await selectDD.selectOption("search-alias=audible");
+    //await selectDD.selectOption("search-alias=audible");
+    await selectByValue(selectDD,"search-alias=audible");
 
     await page.waitForTimeout(1000);
 
@@ -24,3 +26,54 @@ test("Test Select tag based dropdown",async({page})=>{
 
     await page.waitForTimeout(2000);
 })
+
+
+test.only("Test Select Based Dropdown for Custmize code",async({page})=>{
+
+/*
+1.calculate total options
+2.select specific option
+
+*/
+await page.goto("https://www.amazon.in/");
+
+//click on dropdown
+let amazonDD=page.locator("#searchDropdownBox");
+
+let optionsLocator="//select[@name='url']//option";
+await selectBasedDropdown(page,amazonDD,optionsLocator,"Watches");
+
+
+
+
+// await amazonDD.click();
+
+// //get the all options
+// let allOptions=await page.locator("//select[@name='url']//option").all();
+
+// console.log("Total Options are: "+allOptions.length);//46
+
+// for(let i of allOptions)
+// {
+//     console.log(await i.innerText());
+//     if((await i.innerText()).includes("Toys & Games"))
+//     {
+//         console.log("Option found.....");
+//         //select this option
+//         //i.click();//error
+//         amazonDD.selectOption({label:"Toys & Games"});
+
+//         break;
+//     }
+
+    
+// }
+
+await page.waitForTimeout(2000);
+
+
+
+})
+
+
+

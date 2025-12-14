@@ -468,13 +468,6 @@ checkbox & Radion button
 ------------------------------
 done
 
-How to use Javascript command in Playwright
----------------------------------------------
--Scroll the page
--how to refresh page
--how to enter or perform click on element
--how to automate disable element using Javascript
-
 =======================================================
 Dropdown automation
 ==========================
@@ -494,11 +487,63 @@ page.locator().selectOptions({index:2})
 
 2.Non select tag based dropdown/autosuggestion/bootstarp dropdown
 non<select>
+-------------------------
+Use appropriate locator
 
 ============================================
-WebTable automation
+How to execute Javascript code in Playwright
+======================================
+What evaluate() does
+It executes the function you pass in the page’s context, not in Node.js.
+This means it can access browser objects like:
+document,window,localStorage
 
-Calender
+Why use evaluate()?
+To read or modify the DOM
+To run custom JavaScript inside the webpage
+To get values not directly exposed by Playwright API
+evaluate() is more flexible when accessing any page-level JavaScript.
+//scrolldown
+await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));
+//scrollup
+await page.evaluate(()=>window.scrollTo(document.body.scrollHeight,0));
+//scroll for Element
+await page.locator("").scrollIntoViewIfNeeded();
+
+
+How to use Javascript command in Playwright
+---------------------------------------------
+-Scroll the page
+
+continue next session: utility scroll
+
+-how to refresh page
+-how to enter or perform click on element
+-how to automate disable element using Javascript
+
+
+WebTable automation
+=================
+static WebTable
+dynamic WebTable
+pagination
+
+Calender/datePicker
+===============
+
+Alert handling
+Frame handling
+Window/tab handling
+
+special scenarios
+---------------------
+svg
+shadow dom element
+
+video
+screenshots
+
+page object model
 
 
 
