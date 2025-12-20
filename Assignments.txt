@@ -44,3 +44,12 @@ automate https://www.goibibo.com/ dropdown
 
 Assignment11:
 automate https://www.redbus.in/ dropdown
+
+Assignment 12: for automate disabled element
+navigate to https://formy-project.herokuapp.com/enabled app
+and automate both the elements with its status
+
+
+Assignment13: static WebTable
+Navigate to https://testautomationpractice.blogspot.com/p/playwrightpractice.html
+app and get all price and calculate total

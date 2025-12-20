@@ -64,3 +64,38 @@ for(let i of allOptions)
     
 }
  }
+
+
+ //scroll
+
+ /**
+  * 
+  * @param {import("@playwright/test").Page} page 
+  */
+ export async function scrollDown(page)
+ {
+   await page.evaluate(()=>{
+        window.scrollTo(0,document.body.scrollHeight);
+   });
+ }
+
+ /**
+  * 
+  * @param {import("@playwright/test").Page} page 
+  */
+ export async function scrollUp(page)
+ {
+   await page.evaluate(()=>{
+
+    window.scrollTo(document.body.scrollHeight,0);
+   })
+ }
+ 
+/**
+ * 
+ * @param {import("@playwright/test").Locator} element 
+ */
+ export async function scrollUpToElement(element)
+ {
+   await element.scrollIntoViewIfNeeded();
+ }

@@ -499,10 +499,13 @@ This means it can access browser objects like:
 document,window,localStorage
 
 Why use evaluate()?
+--------------------------
 To read or modify the DOM
 To run custom JavaScript inside the webpage
 To get values not directly exposed by Playwright API
+
 evaluate() is more flexible when accessing any page-level JavaScript.
+
 //scrolldown
 await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));
 //scrollup
@@ -515,15 +518,40 @@ How to use Javascript command in Playwright
 ---------------------------------------------
 -Scroll the page
 
-continue next session: utility scroll
-
 -how to refresh page
+-----------------------
+await page.evaluate(()=>{
+     window.history.go(0);
+
+})
+-how to get title of webpage
+===========================
+await page.evaluate(()=>{
+     document.title;
+})
+
 -how to enter or perform click on element
--how to automate disable element using Javascript
+==================================
+https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+querySelector() works with cssSelector only
+await page.evaluate(()=>{
+     document.querySelector("[id='']").click();
+     document.querySelector("locator").value="data"
+})
 
+-how to automate disable element/hidden elements using Javascript
+===========================================================
 
-WebTable automation
+WebTable automation(xpath axis)
 =================
+Scenarios:
+--------------
+Total rows
+Total Colums
+Specific row
+specific Column
+all data print
+
 static WebTable
 dynamic WebTable
 pagination
@@ -535,10 +563,17 @@ Alert handling
 Frame handling
 Window/tab handling
 
+Mouse Operations
+=====================
+
 special scenarios
 ---------------------
 svg
 shadow dom element
+
+
+Assertions
+Hooks in Playwright
 
 video
 screenshots
