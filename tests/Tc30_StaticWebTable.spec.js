@@ -73,6 +73,22 @@ for(let heading of allHeading)
     }
 }
 
+//get all books price and find total
+let allPrice=await page.locator("//table[@name='BookTable']//tbody//tr//td[4]").allInnerTexts();
+
+let total=0;
+for(let price of allPrice)
+{
+    //price(String)--->Number
+    let numberPrice=Number(price);
+    //total
+    total=total+numberPrice;
+}
+
+console.log("Total Price for all Books: "+total);
+
+
+
 await page.waitForTimeout(2000);
 
 })

@@ -50,6 +50,13 @@ navigate to https://formy-project.herokuapp.com/enabled app
 and automate both the elements with its status
 
 
-Assignment13: static WebTable
+Assignment 13: static WebTable
 Navigate to https://testautomationpractice.blogspot.com/p/playwrightpractice.html
 app and get all price and calculate total
+
+Assignment 14: Dynamic WebTable
+Navigate to https://testautomationpractice.blogspot.com/p/playwrightpractice.html
+app and test for given use cases
+1.Memory Size of Firefox process: 33.9 MB
+2.Network speed of Chrome process: 6.4 Mbps
+3.Disk space of Firefox process: 0.69 MB/s
