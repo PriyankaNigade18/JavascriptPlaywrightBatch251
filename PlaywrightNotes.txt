@@ -555,11 +555,46 @@ all data print
 static WebTable
 dynamic WebTable
 pagination
-
+==============================
 Calender/datePicker
 ===============
+To automate Calender
+1.set expections
+2.identify expected month
+3.identify expected date and select
 
+======================================
 Alert handling
+=======================
+Alerts are browser based and for any application wrong selectOptionsalert will trigger
+
+There are 3 types of Alert
+==========================
+1.Simple alert(alert)
+2.Confirmation alert(confirm)
+3.prompt alert(prompt)
+
+-Playwright can interact with the web page dialogs such as alert, confirm, prompt 
+-By default, dialogs are auto-dismissed by Playwright
+-But to perform specific action you can manually trigger it using page.on listener
+
+
+for page.on event handling alert 4 methods are available
+--------------------------------
+1.OK-->To simulate action ok = accept()
+2.Cancel-->To simiulate action on Cancel =dismiss()
+3.To get alert text: message()
+4.To check type of alter= type()
+5.for Prompt alert = accept("prompt")
+
+//Note
+=======
+- trigger alert always before opening that alert
+
+
+
+
+
 Frame handling
 Window/tab handling
 

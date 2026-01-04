@@ -58,21 +58,79 @@ console.log("------------------------------");
 //scenario:Dynamic(page numbers not known/data) iterate every page and check for Fitness Tracker data if found check the checkbox 
 //and if not found the close pegination with appropriate message
 
+let pgno=0;
+while(true)
+{
+    pgno++;
+    //ele is available
+    //found check the checkbox brek the loop
+//ele
+    let isEleExist=await page.locator("//td[text()='Fitness Tracker']").isVisible();
+
+    if(isEleExist)
+    {
+        console.log("Element found...at page : "+pgno);
+        await page.locator("//td[text()='Fitness Tracker']//following-sibling::td/input").check();
+        break;
+        
+    }
+
+
+    //click on next page
+    let nextPage=page.locator("//ul[@id='pagination']//li//a").nth(pgno);
+    await nextPage.click();
+    await page.waitForTimeout(1000);
+    
+    //ele not found :proper message
+    if((await nextPage.innerText()).includes("4"))
+    {
+        console.log("Element not found...Pegination Over!");
+        break;
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+/*
+//for loop correctly run
+
 for(let p of allPages)
 {
     await p.click();
-    let isEleExist=await page.locator("//table[@id='productTable']//tbody//tr//td[text()='Tracker']").isVisible();
-if(isEleExist)
-{
-    console.log("Element is found at PageNumber: "+await p.innerText());
-    await page.locator("//table[@id='productTable']//tbody//tr//td[text()='Tracker']//following-sibling::td/input").check();
-    await page.waitForTimeout(2000);
-    break;
+     //ele
+    let isEleExist=await page.locator("//td[text()='Soundbar']").isVisible();
+
+    if(isEleExist)
+    {
+        console.log("Element found...at page : "+await p.innerText());
+        await page.locator("//td[text()='Soundbar']//following-sibling::td/input").check();
+        break;
+        
+    }
     
+    //next pages
+    await p.click();
+
+    //if ele is not found then close pagination
+    if((await p.innerText()).includes("4"))
+    {
+        console.log("Element not found...Pagination closed...");
+        break;
+        
+    }
+
+
 }
-   
-//console.log("Pegination Over and Expected element not found!");
-}
+
+*/
+
  
 
 
