@@ -589,14 +589,51 @@ for page.on event handling alert 4 methods are available
 
 //Note
 =======
-- trigger alert always before opening that alert
-
-
-
+- trigger alert listener always before opening that alert
 
 
 Frame handling
+==================
+One html document embeded into other html document is called Frame
+<frame> or <iframe> inline frame
+
+In Playwright every frame its frame object
+1.frameLocator(): recommended
+2.page.frame()
+
+=======================================
+Promise concept in JavaScript
+=============================
+State:
+pending
+resolve---handle by then()
+reject----handle by catch()
+
+
 Window/tab handling
+===================
+let [newTab]=await Promise.all([
+
+	page.waitForEvent('popup'),
+	page.locator().click() which tigger that event
+])
+
+special note
+===================
+1.don't use await in promise.all()
+ Because any of the promise fullfill,it will return immediately.
+2.dont change sequence also.
+
+first wait for the event, tren trigger the event by clicking on it. 
+
+3. dont use avait page. locator().click() & await page.waitfor Event() 
+- It will be running in Sequential mode.
+
+after click() promise fullfill and it returns immediately and it won't capture
+the waitForEvent() which look for that event(newtab)so always 
+use without awiat and so it should be in same sequence as well.
+
+=====================================================
 
 Mouse Operations
 =====================
