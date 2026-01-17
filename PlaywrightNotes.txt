@@ -626,7 +626,7 @@ special note
 
 first wait for the event, tren trigger the event by clicking on it. 
 
-3. dont use avait page. locator().click() & await page.waitfor Event() 
+3. dont use await page. locator().click() & await page.waitfor Event() 
 - It will be running in Sequential mode.
 
 after click() promise fullfill and it returns immediately and it won't capture
@@ -635,8 +635,28 @@ use without awiat and so it should be in same sequence as well.
 
 =====================================================
 
+FileUpload
+===============
+done
+Multiple Files: setInputFiles(["path1","path2"])
+single file: setInputFiles("path")
+
 Mouse Operations
 =====================
+1.RightClick(context click)
+await page.locator().click({button:"right"})
+
+
+2.Doubleclick
+await page.locator().dbClick();
+
+3.MouseHover
+4.drag and drop
+5.keyboard
+
+
+
+
 
 special scenarios
 ---------------------
