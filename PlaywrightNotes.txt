@@ -646,31 +646,63 @@ Mouse Operations
 1.RightClick(context click)
 await page.locator().click({button:"right"})
 
-
 2.Doubleclick
 await page.locator().dbClick();
 
 3.MouseHover
+await page.locator().hover()
+
 4.drag and drop
+source.dragTo(target)
+
 5.keyboard
+page.keyboard.press()/type()
+
+Assertions
+===================
+To validate certain state of application we use Assertions
+
+Playwright support two types of assertion
+1.Hard assertion
+--------------------
+If assertion fail playwright will stop execution on that line
+and after 5sec you will see assertion error
+
+2.Soft assertion
+---------------------
+If assertion fail playwright will never stop execution on that line,
+it will continue till and show error on that line
 
 
+Assertions in playwright we can implement using expect()
 
+We have auto wait for assertions which is 5sec.
 
-
+===============================================
 special scenarios
 ---------------------
 svg
+=========
+Scaler vector graph 
+We can automate these elements only with xpath
+
+syntax
+======
+//*[local-name()='svg']
+
+or
+
+//*[name()='svg']
+
+
 shadow dom element
-
-
-Assertions
+===================
 Hooks in Playwright
-
 video
 screenshots
-
 page object model
+
+Framework design
 
 
 

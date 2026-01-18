@@ -60,3 +60,9 @@ app and test for given use cases
 1.Memory Size of Firefox process: 33.9 MB
 2.Network speed of Chrome process: 6.4 Mbps
 3.Disk space of Firefox process: 0.69 MB/s
+
+Assignment 15: SVG Element
+Nabigate to https://opensource-demo.orangehrmlive.com/web/index.php/auth/login 
+app and iterate svg element click on it so it will open new pages/tabs
+get the total count and get the title and print it
+
