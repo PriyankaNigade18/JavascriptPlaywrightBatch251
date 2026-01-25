@@ -697,10 +697,56 @@ or
 
 shadow dom element
 ===================
-Hooks in Playwright
+Shadow DOM is a web standard for isolating CSS and markup within web components,
+ensuring that styles and scripts do not interfere with the main document. 
+It attaches a hidden, separate DOM tree to an element (the shadow host),
+allowing for encapsulated, modular, and reusable components. 
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM
+
+Note:
+===========
+if shadow dom element is available in page then direct identify it and performaction 
+but if element is present inside frame then first identify frame then shadow dom element'
+
 video
 screenshots
+==============================
+Auto Waits +codegen
+
+page level wait
+
+event level wait
+
+element level wait
+
+=================================
+Data driven test in playwright
+===================================
+Data driven Testing is framework in automation
+
+Execute same set of actions, multiple time with multiple set of data is called
+data driven testing
+
+datasetinside file--->script for reading that data--->use in test case
+
+most common file format is json
+
+Data should be in the format of javascript Object(Key:value)
+
+Ways
+======
+1.Using array
+2.using json file
+3.using CSV file(external utilities):https://www.npmjs.com/package/papaparse
+4.using excel file (external utilities):https://www.npmjs.com/package/xlsx
+
+=============================================================
+
+Hooks ,groups and Fixtures in Playwright
+
 page object model
+
 
 Framework design
 

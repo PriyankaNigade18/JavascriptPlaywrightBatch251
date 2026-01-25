@@ -62,7 +62,12 @@ app and test for given use cases
 3.Disk space of Firefox process: 0.69 MB/s
 
 Assignment 15: SVG Element
-Nabigate to https://opensource-demo.orangehrmlive.com/web/index.php/auth/login 
+Navigate to https://opensource-demo.orangehrmlive.com/web/index.php/auth/login 
 app and iterate svg element click on it so it will open new pages/tabs
 get the total count and get the title and print it
+
+
+Assignment 16:
+Navigate to https://selectorshub.com/iframe-in-shadow-dom/ page and
+automate all shadow dom elements
 

@@ -17,3 +17,17 @@ test("Automate svg element",async({page})=>{
 
 
 })
+
+test.only("Test Svg elements",async({page})=>{
+
+    await page.goto("https://bstackdemo.com/signin");
+
+    await page.locator("(//*[name()='svg'])[2]").click();
+
+    await page.locator("//div[text()='demouser']").click();
+
+
+    await page.waitForTimeout(2000);
+
+
+})
