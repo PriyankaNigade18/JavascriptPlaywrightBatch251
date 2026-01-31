@@ -744,8 +744,20 @@ Ways
 =============================================================
 
 Hooks ,groups and Fixtures in Playwright
+=========================================
+Hooks are applicable for preconditions and postconditions
+1.beforeAll()
+2.afterAll()
+3.beforeEach()
+4.afterEach()
+
+how to group test cases/test suite
+--------------------------------
+test.describe()
+
 
 page object model
+
 
 
 Framework design
