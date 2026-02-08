@@ -1,3 +1,4 @@
+import {InventoryPage} from "../pages/InventoryPage.js";
 export class LoginPage{
 
 
@@ -18,7 +19,7 @@ export class LoginPage{
 
     async gotoLoginPage()
     {
-        await this.#page.goto("https://www.saucedemo.com/",{timeout:3000,waitUntil:'load'});
+        await this.#page.goto("https://www.saucedemo.com/",{timeout:10000,waitUntil:'load'});
         await this.#page.waitForTimeout(2000);
     }
 
@@ -38,8 +39,7 @@ export class LoginPage{
     {
         await this.#loginButton.click();
         //navigating to inventory page: return inventory page object
-
-       // return await new InventoryPage(this.#page);
+        return new InventoryPage(this.#page);
     }
 
     async doLogin(un,psw)
@@ -47,7 +47,7 @@ export class LoginPage{
         await this.#username.fill(un);
         await this.#password.fill(psw);
         await this.#loginButton.click();
-       // return await new InventoryPage(this.#page);
+        return new InventoryPage(this.#page);
     }
 
     async getAppTitle()

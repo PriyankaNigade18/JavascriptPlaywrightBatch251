@@ -23,7 +23,19 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'],['list'],['allure-playwright'],
+['playwright-html-reporter',{
+    testFolder: 'tests',
+      title: 'SwagLab HTML Report',
+      project: 'Swag Labs',
+      release: '9.87.6',
+      testEnvironment: 'QA',
+      embedAssets: true,
+      embedAttachments: true,
+      outputFolder: 'playwright-html-report',
+      minifyAssets: true,
+      startServer: true
+  }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -33,6 +45,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot:"on",
     video:"on"
+    
   },
 
   /* Configure projects for major browsers */

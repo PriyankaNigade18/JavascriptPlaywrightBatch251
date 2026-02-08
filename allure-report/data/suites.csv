@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","11265","Tets for Cart product deatils","chromium","2026-02-08","passed","2026-02-08","","CartPage.spec.js","",""
+"","4966","Tets for Continue shopping","chromium","2026-02-08","failed","2026-02-08","","CartPage.spec.js","",""
+"","5044","Tets for Checkout button is working or not","chromium","2026-02-08","failed","2026-02-08","","CartPage.spec.js","",""
+"","10662","Tets for remove product from cart","chromium","2026-02-08","passed","2026-02-08","","CartPage.spec.js","",""

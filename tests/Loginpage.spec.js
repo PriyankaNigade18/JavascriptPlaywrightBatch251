@@ -2,6 +2,7 @@
 //import {test,expect} from "@playwright/test"
 import {test,expect} from "../fixtures/basefixture.js"
 import { LoginPage } from "../pages/LoginPage"
+import {InventoryPage} from "../pages/InventoryPage.js";
 
 
 test("Test for login with valid credentials",async({page})=>{
