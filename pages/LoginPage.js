@@ -19,10 +19,15 @@ export class LoginPage{
 
     async gotoLoginPage()
     {
-        await this.#page.goto("https://www.saucedemo.com/",{timeout:10000,waitUntil:'load'});
+        await this.#page.goto("https://www.saucedemo.com/",{waitUntil:'domcontentloaded'});
         await this.#page.waitForTimeout(2000);
     }
 
+    async openApp(baseUrl)
+    {
+        await this.#page.goto(baseUrl,{waitUntil:'domcontentloaded'})
+         await this.#page.waitForTimeout(2000);
+    }
     async fillUsername(un)
     {
         await this.#username.fill(un);

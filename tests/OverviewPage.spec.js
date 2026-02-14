@@ -14,6 +14,7 @@ let loginpage=new LoginPage(page);
     let ovpage=new OverviewPage(page);
 
     await loginpage.gotoLoginPage();
+    
     invpage=await loginpage.doLogin("standard_user","secret_sauce");
     await invpage.addProductIntoCart("Sauce Labs Fleece Jacket");
     cartpage=await invpage.gotoCartPage();

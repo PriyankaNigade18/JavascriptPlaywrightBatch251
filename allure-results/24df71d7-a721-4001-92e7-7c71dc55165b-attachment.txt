@@ -1,2 +1,0 @@
-Product added into cart: Sauce Labs Fleece Jacket
-Product removed from cart: [object Promise]

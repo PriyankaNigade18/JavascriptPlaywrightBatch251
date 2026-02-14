@@ -2,7 +2,16 @@
   "name": "playwrightframework251",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test":"npx playwright test --headed",
+    "test:loginpage":"npx playwright test tests/LoginPage.spec.js --headed",
+    "test:dev":"npx playwright test --headed --config=playwright.config.dev.js",
+    "test:qa":"npx playwright test --headed --config=playwright.config.qa.js",
+    "test:stage":"npx playwright test --headed --config=playwright.config.stage.js",
+    "test:prod":"npx playwright test --headed --config=playwright.config.prod.js",
+    "allure:generate":"npx allure generate allure-results --clean -o allure-report",
+    "allure:open":" npx allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
